@@ -22,11 +22,6 @@ export function AuthRoutes() {
             }}
         >
             <Screen
-                name={"Signin"}
-                component={Signin}
-            />
-
-            <Screen
                 name={"Home"}
                 component={Home}
             />

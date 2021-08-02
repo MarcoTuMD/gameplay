@@ -3,12 +3,15 @@ import { useFonts } from "expo-font";
 import { Inter_400Regular, Inter_500Medium } from "@expo-google-fonts/inter";
 import { Rajdhani_500Medium, Rajdhani_700Bold } from "@expo-google-fonts/rajdhani";
 import AppLoading from "expo-app-loading";
-import { StatusBar } from 'react-native';
+import { StatusBar, LogBox } from 'react-native';
+
+import { AuthProvider } from "./src/hooks/auth";
+
 import { Background } from "./src/components/Background";
 
 import { Routes } from './src/routes'
 
-
+LogBox.ignoreLogs(['https://auth.expo.io/@anonymous/gameplay-3a91fa68-277e-40d1-bc0f-be9000c727bf']);
 export default function App() {
 
   const [fontsLoaded] = useFonts({
@@ -29,7 +32,9 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      <Routes />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </Background>
   );
 }

@@ -21,7 +21,7 @@ export function Guilds({ handleGuildsSelectet }: Props) {
         },
         {
             id: '2',
-            name: 'Galera do game',
+            name: 'Galera do gamez',
             icon: 'image.png',
             owner: false
         }
@@ -35,7 +35,9 @@ export function Guilds({ handleGuildsSelectet }: Props) {
                     <Guild data={item} onPress={() => handleGuildsSelectet(item)} />
                 )}
                 showsVerticalScrollIndicator={false}
-                ItemSeparatorComponent={() => <ListDivider />}
+                ItemSeparatorComponent={() => <ListDivider isCentered />}
+                ListHeaderComponent={() => <ListDivider isCentered />}
+                contentContainerStyle={{ paddingBottom: 68, paddingTop: 103 }}
                 style={styles.guilds}
             />
 
