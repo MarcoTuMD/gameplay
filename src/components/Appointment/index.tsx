@@ -4,7 +4,7 @@ import { Text, View } from "react-native";
 import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 import { categories } from "../../utils/categories";
 import { GuildIcon } from "../GuildIcon"
-import { GuildProps } from "../Guild";
+import { Guild, GuildProps } from "../Guild";
 
 import { styles } from "./style";
 import PlayerSvg from "../../assets/player.svg";
@@ -34,7 +34,7 @@ export function Appointment({ data, ...rest }: Props) {
         <RectButton {...rest}>
             <View style={styles.container} >
                 <LinearGradient style={styles.guildIconContainer} colors={[secondary50, secondary70]}>
-                    <GuildIcon />
+                    <GuildIcon guildId={data.guild.id} iconId={data.guild.icon} />
                 </LinearGradient>
 
                 <View style={styles.content}>
